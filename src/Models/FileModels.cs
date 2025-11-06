@@ -7,7 +7,7 @@
         public string DestinationPath { get; init; } = string.Empty;
         public bool OverwriteIfExists { get; init; } = false;
         public long? MaxFileSize { get; init; }
-        public IReadOnlyList<string> AllowedExtensions { get; init; } = Array.Empty<string>();
+        public IReadOnlyList<string> AllowedExtensions { get; init; } = [];
         public IDictionary<string, object> Metadata { get; init; } = new Dictionary<string, object>();
     }
 

@@ -43,7 +43,7 @@ public class LocalFileSystemProvider(
             GetContentType(request.FileName));
     }
 
-    public async Task<FileResult> MoveAsync(string sourcePath, string destinationPath, CancellationToken cancellationToken = default)
+    public FileResult Move(string sourcePath, string destinationPath, CancellationToken cancellationToken = default)
     {
         var sourceFullPath = GetFullPath(sourcePath);
         var destinationFullPath = GetFullPath(destinationPath);

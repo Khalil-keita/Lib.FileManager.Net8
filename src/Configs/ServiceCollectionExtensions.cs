@@ -1,8 +1,8 @@
 ﻿using Lib.FileManager.Net8.src.Services;
 using Lib.FileManager.Net8.Src.Interfaces;
 using Lib.FileManager.Net8.Src.Services;
+using Microsoft.Extensions.DependencyInjection;  // Pour IServiceCollection
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Lib.FileManager.Net8.Src.Configs;
 

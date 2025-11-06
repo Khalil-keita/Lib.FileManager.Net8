@@ -6,7 +6,7 @@ public class FileManagerOptions
 
     public string DefaultStorageProvider { get; set; } = "LocalFileSystem";
     public long DefaultMaxFileSize { get; set; } = 100 * 1024 * 1024; // 100MB
-    public IReadOnlyList<string> DefaultAllowedExtensions { get; set; } = new[] { ".jpg", ".jpeg", ".png", ".gif", ".pdf", ".doc", ".docx" };
+    public IReadOnlyList<string> DefaultAllowedExtensions { get; set; } = [".jpg", ".jpeg", ".png", ".gif", ".pdf", ".doc", ".docx"];
     public string BasePath { get; set; } = "uploads";
     public bool UseSecureNaming { get; set; } = true;
     public int FileNameLength { get; set; } = 32;

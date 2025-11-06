@@ -26,7 +26,7 @@ public class FileManagerService(
             var validationResult = await _fileValidator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
-                return FileResult.Failure(validationResult.ErrorMessage!);
+                return FileResult.AsFailure(validationResult.ErrorMessage!);
             }
 
             // Génération du nom de fichier sécurisé
@@ -70,7 +70,7 @@ public class FileManagerService(
                 return FileResult.AsFailure("Source file does not exist.");
             }
 
-            var result = await _storageProvider.MoveAsync(request.SourcePath, request.DestinationPath, cancellationToken);
+            var result = _storageProvider.Move(request.SourcePath, request.DestinationPath, cancellationToken);
 
             Console.WriteLine($"File moved from {request.SourcePath} to {request.DestinationPath}");
 
@@ -120,6 +120,11 @@ public class FileManagerService(
     public Task<FileMetadata> GetMetadataAsync(string filePath, CancellationToken cancellationToken = default)
     {
         return _storageProvider.GetMetadataAsync(filePath, cancellationToken);
+    }
+
+    public Task<IEnumerable<FileMetadata>> ListAsync(string directoryPath, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
     }
 }
 

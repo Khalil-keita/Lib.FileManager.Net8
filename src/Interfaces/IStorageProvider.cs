@@ -6,7 +6,7 @@ namespace Lib.FileManager.Net8.Src.Interfaces
     {
         Task<FileResult> SaveAsync(FileUploadRequest request, CancellationToken cancellationToken = default);
 
-        Task<FileResult> MoveAsync(string sourcePath, string destinationPath, CancellationToken cancellationToken = default);
+        FileResult Move(string sourcePath, string destinationPath, CancellationToken cancellationToken = default);
 
         Task<bool> DeleteAsync(string filePath, CancellationToken cancellationToken = default);
 
